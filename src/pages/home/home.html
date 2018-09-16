@@ -1,0 +1,303 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      SOLICITUD DE ASIGNACIÓN AL ESCENARIO PARA PRACTICAS DE EJECUCION DE COMPETENCIAS
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form #f="ngForm" novalidate>
+    <ion-grid>
+      <h1>DATOS DEL ALUMNO</h1>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Matricula</ion-label>
+            <ion-input required [(ngModel)]="matricula" name="matricula2" #matricula2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="matricula2.errors?.required && matricula2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Carrera</ion-label>
+            <ion-input required [(ngModel)]="carrera" name="carrera2" #carrera2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="carrera2.errors?.required && carrera2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Grupo</ion-label>
+            <ion-input required [(ngModel)]="grupo" name="grupo2" #grupo2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="grupo2.errors?.required && grupo2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Nombre Completo</ion-label>
+            <ion-input required [(ngModel)]="nombre" name="nombre2" #nombre2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="nombre2.errors?.required && nombre2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Edad</ion-label>
+            <ion-input required [(ngModel)]="edad" name="edad2" #edad2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="edad2.errors?.required && edad2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>No. Seguro Social</ion-label>
+            <ion-input required [(ngModel)]="noSeguroSocial" name="noSeguroSocial2" #noSeguroSocial2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="noSeguroSocial2.errors?.required && noSeguroSocial2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Correo Electronico</ion-label>
+            <ion-input required [(ngModel)]="correo" name="correo2" #correo2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="correo2.errors?.required && correo2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Telefono celular</ion-label>
+            <ion-input required [(ngModel)]="telCelular" name="telCelular2" #telCelular2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="telCelular2.errors?.required && telCelular2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Telefono Casa</ion-label>
+            <ion-input required [(ngModel)]="telCasa" name="telCasa2" #telCasa2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="telCasa2.errors?.required && telCasa2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+      </ion-row>
+      <h1>
+        DATOS DE LA DEPENDENCIA
+      </h1>
+
+      <ion-row>
+        <ion-col>
+          <ion-label>Sector: </ion-label>
+          <ion-item>
+            <ion-label>Privado</ion-label>
+            <ion-checkbox [(ngModel)]="sectorPublico" name="sectorPublico" (click)="sectorPublicoFuncion(sectorPublico)"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Publico</ion-label>
+            <ion-checkbox [(ngModel)]="sectorPrivado" name="sectorPrivado" (click)="sectorPrivadoFuncion(sectorPrivado)"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Nombre de la empresa o institución</ion-label>
+            <ion-input required [(ngModel)]="nombreEmpresa" name="nombreEmpresa2" #nombreEmpresa2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="nombreEmpresa2.errors?.required && nombreEmpresa2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>RFC</ion-label>
+            <ion-input required [(ngModel)]="RFC" name="RFC2" #RFC2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="RFC2.errors?.required && RFC2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>ó (en caso de ser institución educativa) CCT</ion-label>
+            <ion-input required [(ngModel)]="CCT" name="CCT2" #CCT2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="CCT2.errors?.required && CCT2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <h3>Domicilio</h3>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Calle</ion-label>
+            <ion-input required [(ngModel)]="calle" name="calle2" #calle2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="calle2.errors?.required && calle2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Numero Exterior</ion-label>
+            <ion-input required [(ngModel)]="noExterior" name="noExterior2" #noExterior2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="noExterior2.errors?.required && noExterior2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Numero interior</ion-label>
+            <ion-input [(ngModel)]="noInterior" name="noInterior2"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Codigo Postal</ion-label>
+            <ion-input required [(ngModel)]="codigoPostal" name="codigoPostal2" #codigoPostal2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="codigoPostal2.errors?.required && codigoPostal2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Colonia</ion-label>
+            <ion-input required [(ngModel)]="colonia" name="colonia2" #colonia2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="colonia2.errors?.required && colonia2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Municipio</ion-label>
+            <ion-input required [(ngModel)]="municipio" name="municipio2" #municipio2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="municipio2.errors?.required && municipio2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Nombre del responsable</ion-label>
+            <ion-input required [(ngModel)]="nombreResponsable" name="nombreResponsable2" #nombreResponsable2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="nombreResponsable2.errors?.required && nombreResponsable2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Cargo del responsable</ion-label>
+            <ion-input required [(ngModel)]="cargoResponsable" name="cargoResponsable2" #cargoResponsable2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="cargoResponsable2.errors?.required && cargoResponsable2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Numero Telefonico del respondable a cargo</ion-label>
+            <ion-input required [(ngModel)]="numTelResponsable" name="numTelResponsable2" #numTelResponsable2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="numTelResponsable2.errors?.required && numTelResponsable2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Extencion</ion-label>
+            <ion-input [(ngModel)]="extencion" name="extencion"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>COMPETENCIAS A DESARROLLAR: </ion-label>
+            <ion-textarea required [(ngModel)]="competencias" name="competencias2" #competencias2="ngModel"></ion-textarea>
+          </ion-item>
+          <div *ngIf="competencias2.errors?.required && competencias2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Dias que asiste</ion-label>
+            <ion-input required [(ngModel)]="diasAsitencia" name="diasAsitencia2" #diasAsitencia2="ngModel"></ion-input>
+          </ion-item>
+          <div *ngIf="diasAsitencia2.errors?.required && diasAsitencia2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Horario en el que asiste</ion-label>
+            <ion-datetime required displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="horarioAsistencia" name="horarioAsistencia2"
+              #horarioAsistencia2="ngModel"></ion-datetime>
+          </ion-item>
+          <div *ngIf="horarioAsistencia2.errors?.required && horarioAsistencia2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>fecha de inicio</ion-label>
+            <ion-datetime required displayFormat="MMM DD YYYY" [(ngModel)]="fechaInicio" name="fechaInicio2"
+              #fechaInicio2="ngModel"></ion-datetime>
+          </ion-item>
+          <div *ngIf="fechaInicio2.errors?.required && fechaInicio2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" floating>Fecha de termino</ion-label>
+            <ion-datetime required displayFormat="MMM DD YYYY" [(ngModel)]="fechaTermino" name="fechaTermino2"
+              #fechaTermino2="ngModel"></ion-datetime>
+          </ion-item>
+          <div *ngIf="fechaTermino2.errors?.required && fechaTermino2.touched" class="noteDanger">
+            Campo requerido
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+<ion-footer>
+  <button [disabled]="!f.valid" ion-button full (click)="guardar(f)">Guardar</button>
+</ion-footer>
